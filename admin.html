@@ -48,7 +48,7 @@ function login(){
  $('#app').innerHTML=`<div class="box"><h3>GitHub Login (ekbar likhlei hobe)</h3><label>GitHub Username</label><input id="o" value="${C.owner}"><label>Repository naam</label><input id="r" value="${C.repo}"><label>Token (password er moto, github theke baniye nite hobe)</label><input id="t" type="password" value="${C.token}"><br><br><button class="p" id="go">Login</button> <span id="msg"></span></div>`;
  $('#go').onclick=async()=>{C={owner:$('#o').value.trim(),repo:$('#r').value.trim(),branch:'main',token:$('#t').value.trim()};say('Check hocche...');
   if(await load()){localStorage.ghc=JSON.stringify(C);$('#out').style.display='';$('#bar').style.display='flex';draw()}else say('Login hoyni. Username, repo ar token check korun.','er')}}
-async function load(){try{const r=await api('content.json');if(!r.ok)return false;const j=await r.json();sha=j.sha;D=JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g,'')))));return true}catch(e){return false}}
+async function load(){try{const r=await api('content.json');if(!r.ok)return false;const j=await r.json();sha=j.sha;D=JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g,'')))));D.site=D.site||{};['hero_photo','map_embed'].forEach(k=>{if(D.site[k]===undefined)D.site[k]=''});return true}catch(e){return false}}
 function draw(){const a=$('#app');a.innerHTML='<div class="tabs"></div><div id="f"></div>';
  Object.keys(N).forEach(k=>{const b=document.createElement('button');b.textContent=N[k];b.className=k==tab?'on':'';b.onclick=()=>{tab=k;draw()};a.firstChild.append(b)});
  build($('#f'),D,tab,'')}
