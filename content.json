@@ -12,6 +12,7 @@
    "en": "Join our Professional Barista Course for hands-on training with expert trainers and secure international career opportunities.",
    "bn": "অভিজ্ঞ ট্রেইনারের মাধ্যমে সরাসরি কফি শপে হাতে-কলমে বারিস্তা ট্রেনিং নিন এবং গড়ে তুলুন আন্তর্জাতিক ক্যারিয়ার।"
   },
+  "hero_photo": "",
   "phones": [
    "01876-981069",
    "01611-315531"
@@ -112,8 +113,8 @@
     "en": "Hands-on barista training with expert trainers, from espresso basics to a real coffee shop workflow."
    },
    "duration": {
-    "bn": "৩০ দিনের ইনটেনসিভ ট্রেনিং",
-    "en": "30 Day Intensive Training"
+    "bn": "১০ দিনের ইনটেনসিভ ট্রেনিং",
+    "en": "10 Day Intensive Training"
    },
    "old": "20150 Tk",
    "price": "16500 Tk",

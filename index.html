@@ -18,7 +18,7 @@ a{color:inherit;text-decoration:none}img,video,iframe{max-width:100%}.w{max-widt
 .i{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;flex:none}
 nav{position:fixed;inset:0 0 auto;z-index:50;padding:10px 0;transition:.3s}
 nav.s{background:var(--nav);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-nav .w{display:flex;align-items:center;gap:18px}nav img{height:44px}
+nav .w{display:flex;align-items:center;gap:18px}nav img{height:62px;width:62px;border-radius:50%;background:radial-gradient(circle,#fff8e8,#f3dfb4);padding:3px;box-shadow:0 4px 18px rgba(0,0,0,.28)}
 nav .l{display:flex;gap:22px;font-size:14px;color:var(--mut);margin-left:auto}nav .l a:hover{color:var(--gold2)}
 .act{display:flex;gap:8px}
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:99px;font:inherit;font-weight:600;border:1px solid var(--gold);cursor:pointer;transition:.3s;background:none;color:var(--tx);text-align:center}
@@ -30,11 +30,9 @@ nav .l{display:flex;gap:22px;font-size:14px;color:var(--mut);margin-left:auto}na
 .hero h1{font-size:clamp(32px,5.4vw,66px);margin-bottom:18px;background:linear-gradient(120deg,var(--h1) 20%,var(--gold2) 65%,var(--gold));-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero p{color:var(--mut);font-size:18px;max-width:560px;margin-bottom:30px}
 .acts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;max-width:640px}.acts .btn{width:100%;padding:0 12px;font-size:15px}
-.badge{position:relative;width:min(420px,76vw);aspect-ratio:1;margin:auto}
-.badge img{position:relative;width:100%;border-radius:50%;background:radial-gradient(circle,#fff8e8,#f3dfb4);padding:6%;box-shadow:0 0 110px var(--sh);animation:fl 6s ease-in-out infinite}
-.badge:before,.badge:after{content:"";position:absolute;inset:-5%;border-radius:50%;border:1px dashed var(--gold);animation:sp 40s linear infinite}
-.badge:after{inset:-10%;border-style:solid;border-color:var(--line);animation-direction:reverse;animation-duration:60s}
-@keyframes sp{to{transform:rotate(360deg)}}@keyframes fl{50%{transform:translateY(-12px)}}
+.hpw{position:relative;width:min(400px,100%);margin:auto}.hpw:before{content:"";position:absolute;inset:16px -16px -16px 16px;border:1px solid var(--gold);border-radius:34px;opacity:.5}
+.hp{position:relative;aspect-ratio:4/5;border-radius:32px;border:2px solid var(--gold);overflow:hidden;background:var(--bg2);display:grid;place-items:center;color:var(--gold);box-shadow:0 30px 80px -30px var(--sh)}
+.hp img{width:100%;height:100%;object-fit:cover}.hp .i{width:80px;height:80px;stroke-width:1}
 .mq{border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;padding:15px 0;color:var(--gold2);font-size:19px;background:var(--bg2)}
 .mq div{display:inline-block;animation:mq 30s linear infinite}.mq span{margin:0 26px}@keyframes mq{to{transform:translateX(-50%)}}
 section{padding:84px 0;scroll-margin-top:60px}.alt{background:var(--bg2)}
@@ -44,7 +42,7 @@ section{padding:84px 0;scroll-margin-top:60px}.alt{background:var(--bg2)}
 .card:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:0 24px 60px -24px var(--sh)}
 .ic{width:54px;height:54px;border-radius:16px;display:grid;place-items:center;background:linear-gradient(135deg,var(--sh),transparent);border:1px solid var(--line);color:var(--gold2);margin-bottom:16px}
 .card h3{font-size:21px;margin-bottom:8px}.card p{color:var(--mut);font-size:15px}
-.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));gap:18px}
+.st{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
 .st .card{text-align:center;padding:26px 18px}.st .ic{margin:0 auto 12px}.st h3{font-size:38px;color:var(--gold2);line-height:1.1}.st b{display:block;font-weight:600;margin-top:6px}.st p{font-size:14px}
 .cbox{margin-top:36px;text-align:center;padding:44px 24px;border-radius:32px;border:1px solid var(--gold);background:radial-gradient(70% 120% at 50% 0,var(--sh),transparent),var(--card)}
 .cbox h2{font-size:clamp(24px,3.6vw,40px);margin-bottom:22px}.cbox .btn{padding:0 34px}
@@ -68,8 +66,8 @@ section{padding:84px 0;scroll-margin-top:60px}.alt{background:var(--bg2)}
 footer{padding:30px 0;text-align:center;color:var(--mut);font-size:14px;border-top:1px solid var(--line)}
 .fab{position:fixed;right:16px;bottom:16px;z-index:60;width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--g1),var(--g2));color:#2a1608;box-shadow:0 10px 36px var(--sh)}
 .rev{opacity:0;transform:translateY(34px);transition:.9s cubic-bezier(.2,.8,.2,1)}.rev.on{opacity:1;transform:none}
-@media(max-width:860px){.hero .w,.ct,.tr{grid-template-columns:1fr}.tr{gap:28px}nav .l{display:none}.act{margin-left:auto}.badge{order:-1;width:min(260px,64vw)}.hero{padding-top:96px;text-align:center}.hero p{margin-inline:auto}.acts{margin:auto}section{padding:60px 0}.tp{max-width:340px;margin:auto;width:100%}}
-@media(max-width:560px){.acts{grid-template-columns:1fr}.sg{gap:8px}.sg div{border-radius:14px}.card{padding:22px}.cbox{padding:34px 18px;border-radius:24px}nav img{height:38px}}
+@media(max-width:860px){.st{grid-template-columns:repeat(2,1fr)}.hero .w,.ct,.tr{grid-template-columns:1fr}.tr{gap:28px}nav .l{display:none}.act{margin-left:auto}.hpw{order:-1;width:min(290px,70vw)}.hero{padding-top:96px;text-align:center}.hero p{margin-inline:auto}.acts{margin:auto}section{padding:60px 0}.tp{max-width:340px;margin:auto;width:100%}}
+@media(max-width:560px){.st{gap:12px}.st .card{padding:18px 8px}.st h3{font-size:30px}.st b{font-size:14px}.st .ic{width:46px;height:46px;margin-bottom:8px}.acts{grid-template-columns:1fr}.sg{gap:8px}.sg div{border-radius:14px}.card{padding:22px}.cbox{padding:34px 18px;border-radius:24px}nav img{height:54px;width:54px}}
 </style></head><body class="bn">
 <svg width="0" height="0" style="position:absolute"><defs>
 <symbol id="phone" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></symbol>
@@ -100,7 +98,7 @@ footer{padding:30px 0;text-align:center;color:var(--mut);font-size:14px;border-t
 <div class="acts"><a class="btn g enr" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg><span data-k="Apply Now|ভর্তি হোন"></span></a>
 <a class="btn" href="#courses"><svg class="i"><use href="#cup"/></svg><span data-k="View Courses|কোর্স দেখুন"></span></a>
 <a class="btn" id="vf" target="_blank" rel="noopener"><svg class="i"><use href="#shield"/></svg><span data-k="Verify Certificate|সার্টিফিকেট যাচাই"></span></a></div></div>
-<div class="badge"><img src="logo.png" alt="Ahlan Qahwa"></div></div></header>
+<div class="hpw" id="hp"></div></div></header>
 <div class="mq"><div id="mq"></div></div>
 <section id="about"><div class="w"><div class="st rev" id="st"></div><div class="cbox rev"><h2 id="c1"></h2><a class="btn g enr" target="_blank" rel="noopener"><svg class="i"><use href="#wa"/></svg><span data-k="Enroll Now|এখনই ভর্তি হোন"></span></a></div></div></section>
 <section id="courses" class="alt"><div class="w"><div class="hd rev"><small data-k="Programs|প্রোগ্রাম"></small><h2 data-k="Our Courses|আমাদের কোর্সসমূহ"></h2></div><div id="cg"></div></div></section>
@@ -128,7 +126,7 @@ function paint(){
  document.body.className=L;document.documentElement.lang=L;$('#lang').textContent=L=='bn'?'EN':'বাং';
  $('#th').innerHTML=ic(document.documentElement.dataset.th=='dark'?'sun':'moon');
  if(D){const s=D.site;
- $('#pill').textContent=t(s.name).replace(/&amp;/g,'&');$('#ht').innerHTML=t(s.hero_title);$('#hs').innerHTML=t(s.hero_sub);$('#vf').href=s.verify;
+ $('#pill').textContent=t(s.name).replace(/&amp;/g,'&');$('#ht').innerHTML=t(s.hero_title);$('#hs').innerHTML=t(s.hero_sub);$('#vf').href=s.verify;$('#hp').innerHTML=`<div class="hp">${s.hero_photo?`<img src="${esc(s.hero_photo)}" alt="">`:ic('img')}</div>`;
  $('#mq').innerHTML=[0,1].map(()=>(D.marquee||[]).map(m=>`<span>${t(m)}</span><span>&#9679;</span>`).join('')).join('');
  $('#st').innerHTML=(D.stats||[]).map((x,i)=>`<div class="card">${'<div class="ic">'+ic(['users','cup','briefcase','star'][i%4])+'</div>'}<h3>${esc(x.n)}</h3><b>${t(x.label)}</b><p>${t(x.sub)}</p></div>`).join('');
  $('#c1').innerHTML=t(D.cta.top);$('#c2').innerHTML=t(D.cta.bottom);

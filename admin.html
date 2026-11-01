@@ -21,6 +21,12 @@ textarea{min-height:70px;resize:vertical}.l2{display:grid;grid-template-columns:
 #msg{font-size:14px}.ok{color:#1a7f37}.er{color:#b3261e}
 .th{height:60px;border-radius:10px;margin-top:8px}
 h3{font-size:16px;margin-bottom:4px}
+.md{position:fixed;inset:0;background:rgba(20,10,5,.72);z-index:20;display:grid;place-items:center;padding:14px}
+.mc{background:#fff;border-radius:22px;padding:18px;width:min(400px,100%);text-align:center}
+.vp{position:relative;overflow:hidden;border-radius:14px;background:#222;touch-action:none;cursor:grab;margin:10px auto}
+.vp img{position:absolute;max-width:none;user-select:none;-webkit-user-drag:none;pointer-events:none}
+.gl{position:absolute;background:rgba(255,255,255,.8);pointer-events:none;box-shadow:0 0 2px rgba(0,0,0,.5)}
+.zr{display:flex;gap:10px;align-items:center;margin:8px 0 14px}.zr input{padding:0}.zr button{width:40px;padding:6px 0;font-size:20px;line-height:1}
 @media(max-width:600px){.l2{grid-template-columns:1fr}}
 </style></head><body>
 <div class="top"><img src="logo.png" alt=""><b>Ahlan Qahwa Admin</b><span class="sp"></span><a href="index.html" target="_blank" style="color:#8a4b1c">Website</a><button id="out" style="display:none">Logout</button></div>
@@ -33,8 +39,8 @@ const T={phones:'',marquee:B,stats:{n:'',label:B,sub:B},courses:{badge:B,title:B
 const N={site:'Site Info',marquee:'Scroll Text',stats:'4 ti Number Box',cta:'Enroll Box',courses:'Course',trainer:'Trainer',success:'Student Success Photo',why:'Keno Amader',stories:'Student Video',career:'Career'};
 const FIX=['photos'],VID=['video'];
 const LBL={photos:['Upor line, BAM pashe','Upor line, MAJHKHANE','Upor line, DAN pashe','Niche line, BAM pashe','Niche line, MAJHKHANE','Niche line, DAN pashe']};
-const HINT={photo:'Photo size: 800 x 1000 px (lamba/portrait, 4:5). Ei size hole shundor boshbe.',photos:'Photo size: 800 x 1000 px (lamba/portrait, 4:5). Ei size hole shundor boshbe.',src:'',video:'YouTube e video upload korun, tarpor Share e click kore link copy kore ekhane paste korun. Video "Embedding allowed" thakte hobe.'};
-const L={bn:'বাংলা',en:'English',n:'Sonkha (jemon 3000+)',label:'Boro likha',sub:'Chhoto likha / Biboron',kicker:'Chhoto heading (uporer)',title:'Heading',desc:'Biboron',duration:'Somoy',badge:'Offer Badge (jemon 30% OFF)',old:'Purano Daam (kata hobe)',price:'Notun Daam',features:'Course er Suvidha (check mark list)',points:'Bullet Point (check mark list)',name:'Naam',role:'Pod',bio:'Porichoy 1',bio2:'Porichoy 2',photo:'Trainer er Photo',video:'YouTube Link',top:'Stats er niche box',bottom:'Sheshe box (Career er por)',phones:'Phone',hero_title:'Boro Headline',hero_sub:'Headline er niche likha',address:'Thikana',hours:'Office Somoy',whatsapp:'WhatsApp (880 diye, jemon 8801876981069)',facebook:'Facebook Link',map:'Google Map Link',verify:'Certificate Verify Link'};
+const HINT={hero_photo:'Training center er chobi. Size: 800 x 1000 px (lamba/portrait). Upload dile chobi set korar popup ashbe.',photo:'Photo size: 800 x 1000 px (lamba/portrait, 4:5). Ei size hole shundor boshbe.',photos:'Photo size: 800 x 1000 px (lamba/portrait, 4:5). Ei size hole shundor boshbe.',src:'',video:'YouTube e video upload korun, tarpor Share e click kore link copy kore ekhane paste korun. Video "Embedding allowed" thakte hobe.'};
+const L={bn:'বাংলা',en:'English',n:'Sonkha (jemon 3000+)',label:'Boro likha',sub:'Chhoto likha / Biboron',kicker:'Chhoto heading (uporer)',title:'Heading',desc:'Biboron',duration:'Somoy',badge:'Offer Badge (jemon 30% OFF)',old:'Purano Daam (kata hobe)',price:'Notun Daam',features:'Course er Suvidha (check mark list)',points:'Bullet Point (check mark list)',name:'Naam',role:'Pod',bio:'Porichoy 1',bio2:'Porichoy 2',photo:'Trainer er Photo',video:'YouTube Link',top:'Stats er niche box',bottom:'Sheshe box (Career er por)',phones:'Phone',hero_title:'Boro Headline',hero_sub:'Headline er niche likha',hero_photo:'Hero Photo (Training Center er chobi)',address:'Thikana',hours:'Office Somoy',whatsapp:'WhatsApp (880 diye, jemon 8801876981069)',facebook:'Facebook Link',map:'Google Map Link',verify:'Certificate Verify Link'};
 const api=(p,o={})=>fetch(`https://api.github.com/repos/${C.owner}/${C.repo}/contents/${p}`,{...o,headers:{Authorization:'Bearer '+C.token,Accept:'application/vnd.github+json','Content-Type':'application/json'}});
 const say=(m,c)=>{$('#msg').textContent=m;$('#msg').className=c||''};
 const b64=s=>btoa(unescape(encodeURIComponent(s)));
@@ -54,17 +60,30 @@ function build(el,par,key,nm){const v=par[key];
  else if(v&&typeof v==='object'&&'bn' in v){const w=document.createElement('div'),tg=long(key)?'textarea':'input';w.innerHTML=`${typeof key==='number'?'':`<label>${L[key]||key}</label>`}<div class="l2"><${tg} placeholder="বাংলা"></${tg}><${tg} placeholder="English"></${tg}></div>`;
   const[b,e]=w.querySelectorAll('.l2>*');b.value=v.bn||'';e.value=v.en||'';b.oninput=()=>v.bn=b.value;e.oninput=()=>v.en=e.value;el.append(w)}
  else if(v&&typeof v==='object'){if(key!=='site'&&typeof key==='string'&&!Array.isArray(par)&&el.id!=='f'){const h=document.createElement('h3');h.textContent=L[key]||key;el.append(h)}Object.keys(v).forEach(k=>build(el,v,k,key))}
- else{const w=document.createElement('div'),up=['photo'].includes(key)||nm==='photos';if(typeof key!=='number')w.innerHTML=`<label>${L[key]||key}</label>`;
+ else{const w=document.createElement('div'),up=['photo','hero_photo'].includes(key)||nm==='photos';if(typeof key!=='number')w.innerHTML=`<label>${L[key]||key}</label>`;
   const r=document.createElement('div');r.className='row';const i=document.createElement('input');i.value=v||'';i.oninput=()=>par[key]=i.value;r.append(i);w.append(r);
   const hn=HINT[up?(nm==='photos'?'photos':key):key];if(hn){const sm=document.createElement('small');sm.style.color='#8a6f52';sm.textContent=hn;w.append(sm)}
   if(up){const f=document.createElement('input');f.type='file';f.accept='image/*';f.style.display='none';const b=document.createElement('button');b.textContent='Upload';b.onclick=()=>f.click();f.onchange=async()=>{const p=await upload(f.files[0]);if(p){i.value=p;par[key]=p;prev()}};r.append(b,f);const pv=document.createElement('div');w.append(pv);const prev=()=>{pv.innerHTML=i.value?`<img class="th" src="${i.value}?${Date.now()}">`:''};prev()}
   el.append(w)}}
 const long=k=>['desc','bio','bio2','text','sub','hero_sub','address','top','bottom'].includes(k);
-async function upload(f){if(!f)return;say('Upload hocche...');
- if(f.size>95e6){say('File 95MB er beshi, choto korun','er');return}
- let data;if(f.type.startsWith('image/')&&!f.type.includes('svg')){const im=await createImageBitmap(f),s=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*s;c.height=im.height*s;c.getContext('2d').drawImage(im,0,0,c.width,c.height);data=c.toDataURL('image/jpeg',.85).split(',')[1];f={name:f.name.replace(/\.\w+$/,'.jpg')}}
- else data=await new Promise(r=>{const x=new FileReader();x.onload=()=>r(x.result.split(',')[1]);x.readAsDataURL(f)});
- const path='uploads/'+Date.now()+'-'+f.name.replace(/[^\w.-]/g,'_');
+function crop(file){return new Promise(res=>{const im=new Image(),u=URL.createObjectURL(file);im.onload=()=>{
+ const W=Math.max(160,Math.min(320,innerWidth-70,(innerHeight-300)/1.25)),H=W*1.25,nw=im.naturalWidth,nh=im.naturalHeight,s0=Math.max(W/nw,H/nh);let z=1,ox=(W-nw*s0)/2,oy=(H-nh*s0)/2;
+ const m=document.createElement('div');m.className='md';m.innerHTML=`<div class="mc"><h3>Chobi set korun</h3><small style="color:#8a6f52">Chobi tene position korun, slider diye zoom in/out korun</small><div class="vp" style="width:${W}px;height:${H}px"></div><div class="zr"><button id="zm">-</button><input id="zr" type="range" min="1" max="4" step="0.01" value="1"><button id="zp">+</button></div><button id="cn">Bad din</button> <button class="p" id="ok">Thik ache</button></div>`;
+ document.body.append(m);const vp=m.querySelector('.vp'),r=m.querySelector('#zr');im.style.cssText='';vp.append(im);
+ [[W/3,0,1,H],[2*W/3,0,1,H],[0,H/3,W,1],[0,2*H/3,W,1]].forEach(([x,y,w,h])=>{const g=document.createElement('div');g.className='gl';g.style.cssText=`left:${x}px;top:${y}px;width:${w}px;height:${h}px`;vp.append(g)});
+ const clamp=()=>{const s=s0*z;ox=Math.min(0,Math.max(W-nw*s,ox));oy=Math.min(0,Math.max(H-nh*s,oy))};
+ const draw=()=>{clamp();const s=s0*z;im.style.width=nw*s+'px';im.style.height=nh*s+'px';im.style.left=ox+'px';im.style.top=oy+'px'};
+ const setz=v=>{const o=s0*z,cx=(W/2-ox)/o,cy=(H/2-oy)/o;z=Math.min(4,Math.max(1,v));const n=s0*z;ox=W/2-cx*n;oy=H/2-cy*n;r.value=z;draw()};
+ let p=null;vp.onpointerdown=e=>{p=[e.clientX,e.clientY];vp.setPointerCapture(e.pointerId);vp.style.cursor='grabbing'};
+ vp.onpointermove=e=>{if(!p)return;ox+=e.clientX-p[0];oy+=e.clientY-p[1];p=[e.clientX,e.clientY];draw()};vp.onpointerup=vp.onpointercancel=()=>{p=null;vp.style.cursor='grab'};
+ vp.onwheel=e=>{e.preventDefault();setz(z-e.deltaY/400)};r.oninput=()=>setz(+r.value);m.querySelector('#zm').onclick=()=>setz(z-.2);m.querySelector('#zp').onclick=()=>setz(z+.2);
+ const done=v=>{m.remove();URL.revokeObjectURL(u);res(v)};m.querySelector('#cn').onclick=()=>done(null);
+ m.querySelector('#ok').onclick=()=>{const s=s0*z,c=document.createElement('canvas');c.width=800;c.height=1000;c.getContext('2d').drawImage(im,-ox/s,-oy/s,W/s,H/s,0,0,800,1000);done(c.toDataURL('image/jpeg',.88))};
+ draw()};im.onerror=()=>{URL.revokeObjectURL(u);res(null)};im.src=u})}
+async function upload(f){if(!f)return;let data,name=f.name;
+ if(f.type.startsWith('image/')&&!f.type.includes('svg')){const d=await crop(f);if(!d)return;data=d.split(',')[1];name=f.name.replace(/\.\w+$/,'')+'.jpg'}
+ else{if(f.size>95e6){say('File 95MB er beshi','er');return}data=await new Promise(r=>{const x=new FileReader();x.onload=()=>r(x.result.split(',')[1]);x.readAsDataURL(f)})}
+ say('Upload hocche...');const path='uploads/'+Date.now()+'-'+name.replace(/[^\w.-]/g,'_');
  const r=await api(path,{method:'PUT',body:JSON.stringify({message:'upload '+path,content:data,branch:C.branch})});
  if(r.ok){say('Upload hoyeche. Ekhon Save din.','ok');return path}say('Upload hoyni','er')}
 $('#save').onclick=async()=>{say('Save hocche...');const r=await api('content.json',{method:'PUT',body:JSON.stringify({message:'update content',content:b64(JSON.stringify(D,null,1)),sha,branch:C.branch})});
