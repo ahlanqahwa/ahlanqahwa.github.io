@@ -1,35 +1,338 @@
 {
  "site": {
-  "name": {"en": "Ahlan Qahwa Barista Training Center", "bn": "আহলান কাওয়া বারিস্তা ট্রেনিং সেন্টার"},
-  "hero_title": {"en": "Professional Barista Training Academy in Cumilla", "bn": "কুমিল্লায় প্রফেশনাল বারিস্তা ট্রেনিং একাডেমি"},
-  "hero_sub": {"en": "Join our Professional Barista Course for hands-on training with expert trainers and secure international career opportunities.", "bn": "অভিজ্ঞ ট্রেইনারের মাধ্যমে সরাসরি কফি শপে হাতে-কলমে বারিস্তা ট্রেনিং নিন এবং গড়ে তুলুন আন্তর্জাতিক ক্যারিয়ার।"},
-  "phones": ["01876-981069", "01611-315531"],
+  "name": {
+   "en": "Ahlan Qahwa Barista Training Center",
+   "bn": "আহলান কাওয়া বারিস্তা ট্রেনিং সেন্টার"
+  },
+  "hero_title": {
+   "en": "Professional Barista Training Academy in Cumilla",
+   "bn": "কুমিল্লায় প্রফেশনাল বারিস্তা ট্রেনিং একাডেমি"
+  },
+  "hero_sub": {
+   "en": "Join our Professional Barista Course for hands-on training with expert trainers and secure international career opportunities.",
+   "bn": "অভিজ্ঞ ট্রেইনারের মাধ্যমে সরাসরি কফি শপে হাতে-কলমে বারিস্তা ট্রেনিং নিন এবং গড়ে তুলুন আন্তর্জাতিক ক্যারিয়ার।"
+  },
+  "phones": [
+   "01876-981069",
+   "01611-315531"
+  ],
   "whatsapp": "8801876981069",
-  "address": {"en": "Tomchom Bridge, opposite Popular Hospital (west side), Laksam Road, Cumilla", "bn": "কুমিল্লা টমছম ব্রীজ, পপুলার হসপিটালের বিপরীতে (পশ্চিম পার্শ্বে), লাকসাম রোড, কুমিল্লা"},
+  "address": {
+   "en": "Tomchom Bridge, opposite Popular Hospital (west side), Laksam Road, Cumilla",
+   "bn": "কুমিল্লা টমছম ব্রীজ, পপুলার হসপিটালের বিপরীতে (পশ্চিম পার্শ্বে), লাকসাম রোড, কুমিল্লা"
+  },
   "facebook": "https://www.facebook.com/ahlanqahwabd",
   "map": "https://www.google.com/maps/search/?api=1&query=Tomchom+Bridge+Laksam+Road+Cumilla",
   "verify": "https://sadubranding.github.io/verify/",
-  "hours": {"en": "", "bn": ""}
+  "hours": {
+   "en": "",
+   "bn": ""
+  }
  },
  "marquee": [
-  {"en": "Espresso", "bn": "এসপ্রেসো"}, {"en": "Latte Art", "bn": "ল্যাটে আর্ট"},
-  {"en": "Hands-on Training", "bn": "হাতে-কলমে ট্রেনিং"}, {"en": "Certified Course", "bn": "সার্টিফাইড কোর্স"},
-  {"en": "Career Support", "bn": "ক্যারিয়ার সাপোর্ট"}
+  {
+   "en": "Espresso",
+   "bn": "এসপ্রেসো"
+  },
+  {
+   "en": "Latte Art",
+   "bn": "ল্যাটে আর্ট"
+  },
+  {
+   "en": "Hands-on Training",
+   "bn": "হাতে-কলমে ট্রেনিং"
+  },
+  {
+   "en": "Certified Course",
+   "bn": "সার্টিফাইড কোর্স"
+  },
+  {
+   "en": "Career Support",
+   "bn": "ক্যারিয়ার সাপোর্ট"
+  }
  ],
- "stats": [],
+ "stats": [
+  {
+   "n": "3000+",
+   "label": {
+    "bn": "শিক্ষার্থী প্রশিক্ষিত",
+    "en": "Students Trained"
+   },
+   "sub": {
+    "bn": "সাফল্যের গল্প",
+    "en": "Success Stories"
+   }
+  },
+  {
+   "n": "100%",
+   "label": {
+    "bn": "হাতে-কলমে",
+    "en": "Hands-on"
+   },
+   "sub": {
+    "bn": "মেশিন প্র্যাকটিস",
+    "en": "Machine Practice"
+   }
+  },
+  {
+   "n": "95%",
+   "label": {
+    "bn": "জব প্লেসমেন্ট",
+    "en": "Job Placement"
+   },
+   "sub": {
+    "bn": "ইন্ডাস্ট্রি রেট",
+    "en": "Industry Rate"
+   }
+  },
+  {
+   "n": "15+",
+   "label": {
+    "bn": "বছরের অভিজ্ঞতা",
+    "en": "Years Experience"
+   },
+   "sub": {
+    "bn": "এক্সপার্ট মেন্টরশিপ",
+    "en": "Expert Mentorship"
+   }
+  }
+ ],
  "courses": [
-  {"title": {"en": "Professional Barista Course", "bn": "প্রফেশনাল বারিস্তা কোর্স"},
-   "desc": {"en": "Hands-on barista training with expert trainers, from espresso basics to a real coffee shop workflow.", "bn": "অভিজ্ঞ ট্রেইনারের কাছে এসপ্রেসোর মূল বিষয় থেকে কফি শপের বাস্তব কাজ পর্যন্ত হাতে-কলমে শিখুন।"},
-   "duration": {"en": "", "bn": ""}, "fee": {"en": "", "bn": ""}, "batch": {"en": "", "bn": ""}}
+  {
+   "badge": {
+    "bn": "৩০% ছাড়, সীমিত অফার",
+    "en": "30% OFF Limited Offer"
+   },
+   "title": {
+    "bn": "প্রফেশনাল বারিস্তা কোর্স",
+    "en": "Professional Barista Course"
+   },
+   "desc": {
+    "bn": "অভিজ্ঞ ট্রেইনারের কাছে এসপ্রেসোর মূল বিষয় থেকে কফি শপের বাস্তব কাজ পর্যন্ত হাতে-কলমে শিখুন।",
+    "en": "Hands-on barista training with expert trainers, from espresso basics to a real coffee shop workflow."
+   },
+   "duration": {
+    "bn": "১০ দিনের ইনটেনসিভ ট্রেনিং",
+    "en": "10 Day Intensive Training"
+   },
+   "old": "20150 Tk",
+   "price": "16500 Tk",
+   "features": [
+    {
+     "bn": "আধুনিক এসপ্রেসো মেশিনে প্র্যাকটিস",
+     "en": "Modern Espresso Machine Practice"
+    },
+    {
+     "bn": "প্রফেশনাল বারিস্তা সার্টিফিকেট",
+     "en": "Professional Barista Certificate"
+    },
+    {
+     "bn": "১০০% জব প্লেসমেন্ট সহায়তা",
+     "en": "100% Job Placement Assistance"
+    }
+   ]
+  }
  ],
  "trainers": [],
  "career": [
-  {"title": {"en": "International Career Pathway", "bn": "আন্তর্জাতিক ক্যারিয়ারের পথ"},
-   "desc": {"en": "Build skills that are in demand in cafes and hospitality workplaces at home and abroad.", "bn": "দেশে ও বিদেশের ক্যাফে ও হসপিটালিটি খাতে চাহিদাসম্পন্ন দক্ষতা অর্জন করুন।"}},
-  {"title": {"en": "Certificate", "bn": "সার্টিফিকেট"},
-   "desc": {"en": "Receive a course certificate that can be verified online with a QR code.", "bn": "কোর্স শেষে কিউআর কোডসহ সার্টিফিকেট পান, যা অনলাইনে যাচাই করা যায়।"}}
+  {
+   "title": {
+    "en": "International Career Pathway",
+    "bn": "আন্তর্জাতিক ক্যারিয়ারের পথ"
+   },
+   "desc": {
+    "en": "Build skills that are in demand in cafes and hospitality workplaces at home and abroad.",
+    "bn": "দেশে ও বিদেশের ক্যাফে ও হসপিটালিটি খাতে চাহিদাসম্পন্ন দক্ষতা অর্জন করুন।"
+   }
+  },
+  {
+   "title": {
+    "en": "Certificate",
+    "bn": "সার্টিফিকেট"
+   },
+   "desc": {
+    "en": "Receive a course certificate that can be verified online with a QR code.",
+    "bn": "কোর্স শেষে কিউআর কোডসহ সার্টিফিকেট পান, যা অনলাইনে যাচাই করা যায়।"
+   }
+  }
  ],
- "gallery": [],
- "reviews": [],
- "faq": []
+ "cta": {
+  "top": {
+   "bn": "আজই শুরু করুন আপনার বারিস্তা ক্যারিয়ার",
+   "en": "Start Your Barista Career Today"
+  },
+  "bottom": {
+   "bn": "আপনার বারিস্তা ক্যারিয়ার শুরু হোক এখানেই",
+   "en": "Your Barista Career Starts Here"
+  }
+ },
+ "trainer": {
+  "kicker": {
+   "bn": "সার্টিফাইড বারিস্তা ট্রেইনার, কুমিল্লা",
+   "en": "Certified Barista Trainer in Cumilla"
+  },
+  "title": {
+   "bn": "আপনার ট্রেইনারের সাথে পরিচিত হোন",
+   "en": "Meet Your Trainer"
+  },
+  "sub": {
+   "bn": "আন্তর্জাতিক দক্ষতাসম্পন্ন অভিজ্ঞ প্রফেশনালের কাছ থেকে সেরা বারিস্তা ট্রেনিং নিন।",
+   "en": "Get the best Barista Training from a seasoned professional with international expertise."
+  },
+  "name": {
+   "bn": "সোহেল মাহমুদ (Sohel Mahmud)",
+   "en": "Sohel Mahmud"
+  },
+  "role": {
+   "bn": "হেড বারিস্তা ও সার্টিফাইড ট্রেইনার",
+   "en": "Head Barista & Certified Trainer"
+  },
+  "bio": {
+   "bn": "আমাদের প্রধান ট্রেইনার একজন অত্যন্ত অভিজ্ঞ প্রফেশনাল বারিস্তা, যার ১৫+ বছরের বাস্তব অভিজ্ঞতা রয়েছে। তিনি ফাইভ স্টার হোটেল, ফোর স্টার হোটেল, ইন্টারন্যাশনাল কফি চেইন এবং বিভিন্ন ক্লাবে কাজ করার অভিজ্ঞতা অর্জন করেছেন।",
+   "en": "Our head trainer is a highly experienced professional barista with 15+ years of real-world experience across five-star and four-star hotels, international coffee chains and clubs."
+  },
+  "bio2": {
+   "bn": "বিশেষভাবে তিনি Dhaka Club Limited-এ কাজ করেছেন, যেখানে তিনি প্রফেশনাল পরিবেশে কফি সার্ভিস ও ট্রেনিং দিয়েছেন। তার এই বাস্তব অভিজ্ঞতার মাধ্যমে তিনি শিক্ষার্থীদের হাতে-কলমে প্রশিক্ষণ প্রদান করেন।",
+   "en": "He notably worked at Dhaka Club Limited, delivering coffee service and training in a professional setting, and brings that experience to hands-on teaching."
+  },
+  "photo": "",
+  "points": [
+   {
+    "bn": "১৫+ বছরের প্রফেশনাল অভিজ্ঞতা",
+    "en": "15+ Years Professional Experience"
+   },
+   {
+    "bn": "৫-স্টার ও ৪-স্টার হোটেলে কাজের অভিজ্ঞতা",
+    "en": "Worked in 5-Star & 4-Star Hotels"
+   },
+   {
+    "bn": "ইন্টারন্যাশনাল কফি চেইনে অভিজ্ঞতা",
+    "en": "Experience with International Coffee Chains"
+   },
+   {
+    "bn": "Dhaka Club Limited-এ কাজ করেছেন",
+    "en": "Worked at Dhaka Club Limited"
+   },
+   {
+    "bn": "ল্যাটে আর্ট ও এসপ্রেসো টেকনিকে এক্সপার্ট",
+    "en": "Expert in Latte Art & Espresso Techniques"
+   }
+  ]
+ },
+ "success": {
+  "kicker": {
+   "bn": "শিক্ষার্থীদের সাফল্য",
+   "en": "Student Success"
+  },
+  "title": {
+   "bn": "বিশ্বজুড়ে আমাদের শিক্ষার্থীরা",
+   "en": "Our Students Worldwide"
+  },
+  "sub": {
+   "bn": "আমাদের শিক্ষার্থীরা এখন Malta, Cyprus, Europe, Australia সহ বিভিন্ন দেশে সফলভাবে কাজ করছে।",
+   "en": "Our students are now working successfully in Malta, Cyprus, Europe, Australia and more."
+  },
+  "photos": [
+   "",
+   "",
+   "",
+   "",
+   "",
+   ""
+  ]
+ },
+ "why": {
+  "kicker": {
+   "bn": "কেন আমাদের বেছে নেবেন",
+   "en": "Why Students Choose Us"
+  },
+  "title": {
+   "bn": "কেন আমাদের বারিস্তা একাডেমি বেছে নেবেন?",
+   "en": "Why Choose Our Barista Academy in Cumilla?"
+  },
+  "sub": {
+   "bn": "আমরা শুধু কফি বানানো শেখাই না, আমরা আপনাকে একজন দক্ষ প্রফেশনাল হিসেবে গড়ে তুলি। আমাদের আধুনিক মডিউল আপনাকে গ্লোবাল স্ট্যান্ডার্ডে দক্ষ করে তুলবে।",
+   "en": "We do not just teach coffee making, we build skilled professionals. Our modern modules prepare you to global standards."
+  },
+  "items": [
+   {
+    "title": {
+     "bn": "হ্যান্ডস-অন ট্রেনিং",
+     "en": "Hands-on Training"
+    },
+    "desc": {
+     "bn": "বাস্তব অভিজ্ঞতার মাধ্যমে সরাসরি কফি মেকিং প্র্যাকটিস করার সুযোগ।",
+     "en": "Practice real coffee making directly through hands-on experience."
+    }
+   },
+   {
+    "title": {
+     "bn": "আসল কফি মেশিন",
+     "en": "Real Coffee Machines"
+    },
+    "desc": {
+     "bn": "লেটেস্ট মডেলের কফি মেশিনে কাজ শেখার অনন্য অভিজ্ঞতা।",
+     "en": "A unique experience learning on the latest model coffee machines."
+    }
+   },
+   {
+    "title": {
+     "bn": "এক্সপার্ট ট্রেইনার",
+     "en": "Expert Trainer"
+    },
+    "desc": {
+     "bn": "অভিজ্ঞ প্রশিক্ষকের প্রত্যক্ষ তত্ত্বাবধানে বিশেষ কোর্স মডিউল।",
+     "en": "Special course modules under the direct supervision of an experienced trainer."
+    }
+   },
+   {
+    "title": {
+     "bn": "জব-রেডি স্কিল",
+     "en": "Job-Ready Skills"
+    },
+    "desc": {
+     "bn": "কোর্সের পর ইন্টার্নশিপ এবং চাকরির বিশেষ সহায়তায় আমরা সবসময় পাশে আছি।",
+     "en": "After the course we support you with internship and job assistance."
+    }
+   }
+  ]
+ },
+ "stories": {
+  "kicker": {
+   "bn": "কেন শিক্ষার্থীরা আমাদের বেছে নেয়",
+   "en": "Why Students Choose Us"
+  },
+  "title": {
+   "bn": "শিক্ষার্থীদের সাফল্যের গল্প",
+   "en": "Student Success Stories"
+  },
+  "sub": {
+   "bn": "আমাদের সাফল্য আমাদের শিক্ষার্থীদের উন্নতিতে। তাদের গল্প দেখুন এবং প্রতিটি উচ্চাকাঙ্ক্ষী বারিস্তার জন্য আমাদের প্রফেশনাল পরিবেশ দেখুন।",
+   "en": "Our success is defined by our students' growth. Watch their stories and see the professional environment we provide for every aspiring barista."
+  },
+  "videos": [
+   {
+    "video": "",
+    "title": {
+     "bn": "শিক্ষার্থীদের অভিজ্ঞতা",
+     "en": "Student Experience"
+    },
+    "sub": {
+     "bn": "প্রশিক্ষণরত বারিস্তাদের আসল মতামত।",
+     "en": "Real feedback from our baristas in training."
+    }
+   },
+   {
+    "video": "",
+    "title": {
+     "bn": "কেন আমাদের একাডেমি",
+     "en": "Why Choose Our Academy"
+    },
+    "sub": {
+     "bn": "কী আমাদের সেরা ট্রেনিং সেন্টার করে তুলেছে, জানুন।",
+     "en": "Discover what makes us the best training center."
+    }
+   }
+  ]
+ }
 }
