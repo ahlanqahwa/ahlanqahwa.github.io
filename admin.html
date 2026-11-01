@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="bn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>Admin | Ahlan Qahwa</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0}body{font:15px/1.6 'Hind Siliguri',system-ui,sans-serif;background:#f4efe8;color:#2a1608;padding-bottom:90px}
+.top{position:sticky;top:0;z-index:5;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);border-bottom:1px solid #e4d7c3;padding:12px 18px;display:flex;align-items:center;gap:12px}
+.top img{height:38px}.top b{font-size:17px}.top .sp{flex:1}
+.w{max-width:860px;margin:auto;padding:18px}
+.tabs{display:flex;gap:8px;overflow-x:auto;padding:4px 0 14px}
+.tabs button{white-space:nowrap}
+button{font:inherit;cursor:pointer;border:1px solid #d9c6a5;background:#fff;border-radius:12px;padding:9px 16px;color:#2a1608}
+button.on,button.p{background:#8a4b1c;color:#fff;border-color:#8a4b1c}button.d{color:#b3261e;border-color:#f0c4c0}
+.box{background:#fff;border:1px solid #e8dcc8;border-radius:18px;padding:18px;margin-bottom:14px;box-shadow:0 6px 20px -14px rgba(60,30,10,.4)}
+.box .box{background:#fcf9f4;box-shadow:none}
+label{display:block;font-size:13px;color:#8a6f52;margin:10px 0 4px;font-weight:600}
+input,textarea{width:100%;font:inherit;padding:10px 12px;border:1px solid #dccdb4;border-radius:12px;background:#fff;color:#2a1608}
+textarea{min-height:70px;resize:vertical}.l2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.row{display:flex;gap:8px;align-items:center}.row input{flex:1}
+.bar{position:fixed;inset:auto 0 0;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-top:1px solid #e4d7c3;padding:12px 18px;display:flex;gap:12px;align-items:center;justify-content:center}
+#msg{font-size:14px}.ok{color:#1a7f37}.er{color:#b3261e}
+.th{height:60px;border-radius:10px;margin-top:8px}
+h3{font-size:16px;margin-bottom:4px}
+@media(max-width:600px){.l2{grid-template-columns:1fr}}
+</style></head><body>
+<div class="top"><img src="logo.png" alt=""><b>Ahlan Qahwa Admin</b><span class="sp"></span><a href="index.html" target="_blank" style="color:#8a4b1c">Website</a><button id="out" style="display:none">Logout</button></div>
+<div class="w" id="app"></div>
+<div class="bar" id="bar" style="display:none"><span id="msg"></span><button class="p" id="save">Save kore Website e din</button></div>
+<script>
+const $=s=>document.querySelector(s);let C=JSON.parse(localStorage.ghc||'{"owner":"sadubranding","repo":"ahlanqahwa","branch":"main","token":""}'),D,sha,tab='site';
+const T={phones:'',stats:{n:'',label:{bn:'',en:''}},marquee:{bn:'',en:''},courses:{title:{bn:'',en:''},desc:{bn:'',en:''},duration:{bn:'',en:''},fee:{bn:'',en:''},batch:{bn:'',en:''}},trainers:{name:{bn:'',en:''},role:{bn:'',en:''},bio:{bn:'',en:''},photo:''},career:{title:{bn:'',en:''},desc:{bn:'',en:''}},gallery:{src:'',caption:{bn:'',en:''}},reviews:{name:{bn:'',en:''},text:{bn:'',en:''}},faq:{q:{bn:'',en:''},a:{bn:'',en:''}}};
+const N={site:'Site Info',marquee:'Scroll Text',stats:'Numbers',courses:'Courses',trainers:'Trainers',career:'Career',gallery:'Photo / Video',reviews:'Reviews',faq:'FAQ'};
+const L={bn:'বাংলা',en:'English',n:'Sonkha (jemon 500+)',label:'Likha',title:'Naam',desc:'Biboron',duration:'Somoy (jemon 3 Month)',fee:'Fee',batch:'Next Batch',name:'Naam',role:'Pod',bio:'Porichoy',photo:'Photo',src:'Photo/Video',caption:'Caption',text:'Mot',q:'Proshno',a:'Uttor',phones:'Phone',hero_title:'Boro Headline',hero_sub:'Headline er niche likha',address:'Thikana',hours:'Office Somoy',whatsapp:'WhatsApp (880 diye, jemon 8801876981069)',facebook:'Facebook Link',map:'Google Map Link',verify:'Certificate Verify Link',name_:'Naam'};
+const api=(p,o={})=>fetch(`https://api.github.com/repos/${C.owner}/${C.repo}/contents/${p}`,{...o,headers:{Authorization:'Bearer '+C.token,Accept:'application/vnd.github+json','Content-Type':'application/json'}});
+const say=(m,c)=>{$('#msg').textContent=m;$('#msg').className=c||''};
+const b64=s=>btoa(unescape(encodeURIComponent(s)));
+function login(){
+ $('#app').innerHTML=`<div class="box"><h3>GitHub Login (ekbar likhlei hobe)</h3><label>GitHub Username</label><input id="o" value="${C.owner}"><label>Repository naam</label><input id="r" value="${C.repo}"><label>Token (password er moto, github theke baniye nite hobe)</label><input id="t" type="password" value="${C.token}"><br><br><button class="p" id="go">Login</button> <span id="msg"></span></div>`;
+ $('#go').onclick=async()=>{C={owner:$('#o').value.trim(),repo:$('#r').value.trim(),branch:'main',token:$('#t').value.trim()};say('Check hocche...');
+  if(await load()){localStorage.ghc=JSON.stringify(C);$('#out').style.display='';$('#bar').style.display='flex';draw()}else say('Login hoyni. Username, repo ar token check korun.','er')}}
+async function load(){try{const r=await api('content.json');if(!r.ok)return false;const j=await r.json();sha=j.sha;D=JSON.parse(decodeURIComponent(escape(atob(j.content.replace(/\n/g,'')))));return true}catch(e){return false}}
+function draw(){const a=$('#app');a.innerHTML='<div class="tabs"></div><div id="f"></div>';
+ Object.keys(N).forEach(k=>{const b=document.createElement('button');b.textContent=N[k];b.className=k==tab?'on':'';b.onclick=()=>{tab=k;draw()};a.firstChild.append(b)});
+ build($('#f'),D,tab)}
+function build(el,par,key){const v=par[key];
+ if(Array.isArray(v)){const w=document.createElement('div');const render=()=>{w.innerHTML='';v.forEach((x,i)=>{const bx=document.createElement('div');bx.className='box';
+   const h=document.createElement('div');h.className='row';h.innerHTML=`<h3 style="flex:1">${N[key]||key} #${i+1}</h3>`;const d=document.createElement('button');d.className='d';d.textContent='Muchhe din';d.onclick=()=>{if(confirm('Muchhe felbo?')){v.splice(i,1);render()}};h.append(d);bx.append(h);build(bx,v,i);w.append(bx)});
+   const ad=document.createElement('button');ad.className='p';ad.textContent='+ Notun add korun';ad.onclick=()=>{v.push(JSON.parse(JSON.stringify(T[key]??'')));render()};w.append(ad)};render();el.append(w)}
+ else if(v&&typeof v==='object'&&'bn' in v){const w=document.createElement('div');w.innerHTML=`<label>${L[key]||key}</label><div class="l2"><${long(key)?'textarea':'input'} placeholder="বাংলা"></${long(key)?'textarea':'input'}><${long(key)?'textarea':'input'} placeholder="English"></${long(key)?'textarea':'input'}></div>`;
+  const[b,e]=w.querySelectorAll('.l2>*');b.value=v.bn||'';e.value=v.en||'';b.oninput=()=>v.bn=b.value;e.oninput=()=>v.en=e.value;if(typeof key==='number'||key==='name'&&el.querySelector('h3'))w.firstChild.remove();el.append(w)}
+ else if(v&&typeof v==='object'){Object.keys(v).forEach(k=>build(el,v,k))}
+ else{const w=document.createElement('div'),up=['photo','src'].includes(key);if(typeof key!=='number')w.innerHTML=`<label>${L[key]||key}</label>`;
+  const r=document.createElement('div');r.className='row';const i=document.createElement('input');i.value=v||'';i.oninput=()=>par[key]=i.value;r.append(i);w.append(r);
+  if(up){const f=document.createElement('input');f.type='file';f.accept='image/*,video/*';f.style.display='none';const b=document.createElement('button');b.textContent='Upload';b.onclick=()=>f.click();f.onchange=async()=>{const p=await upload(f.files[0]);if(p){i.value=p;par[key]=p;prev()}};r.append(b,f);const pv=document.createElement('div');w.append(pv);const prev=()=>{pv.innerHTML=i.value?(/\.(mp4|webm|mov)$/i.test(i.value)?'<span>Video ready</span>':`<img class="th" src="${i.value}?${Date.now()}">`):''};prev()}
+  el.append(w)}}
+const long=k=>['desc','bio','text','a','hero_sub','address','q'].includes(k);
+async function upload(f){if(!f)return;say('Upload hocche...');
+ if(f.size>95e6){say('File 95MB er beshi, choto korun','er');return}
+ let data;if(f.type.startsWith('image/')&&!f.type.includes('svg')){const im=await createImageBitmap(f),s=Math.min(1,1600/Math.max(im.width,im.height)),c=document.createElement('canvas');c.width=im.width*s;c.height=im.height*s;c.getContext('2d').drawImage(im,0,0,c.width,c.height);data=c.toDataURL('image/jpeg',.85).split(',')[1];f={name:f.name.replace(/\.\w+$/,'.jpg')}}
+ else data=await new Promise(r=>{const x=new FileReader();x.onload=()=>r(x.result.split(',')[1]);x.readAsDataURL(f)});
+ const path='uploads/'+Date.now()+'-'+f.name.replace(/[^\w.-]/g,'_');
+ const r=await api(path,{method:'PUT',body:JSON.stringify({message:'upload '+path,content:data,branch:C.branch})});
+ if(r.ok){say('Upload hoyeche. Ekhon Save din.','ok');return path}say('Upload hoyni','er')}
+$('#save').onclick=async()=>{say('Save hocche...');const r=await api('content.json',{method:'PUT',body:JSON.stringify({message:'update content',content:b64(JSON.stringify(D,null,1)),sha,branch:C.branch})});
+ if(r.ok){sha=(await r.json()).content.sha;say('Save hoyeche. 1-2 minute pore website e dekha jabe.','ok')}else say('Save hoyni. Abar try korun.','er')};
+$('#out').onclick=()=>{localStorage.removeItem('ghc');location.reload()};
+(async()=>{if(C.token&&await load()){$('#out').style.display='';$('#bar').style.display='flex';draw()}else login()})();
+</script></body></html>

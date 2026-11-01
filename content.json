@@ -1,0 +1,35 @@
+{
+ "site": {
+  "name": {"en": "Ahlan Qahwa Barista Training Center", "bn": "আহলান কাওয়া বারিস্তা ট্রেনিং সেন্টার"},
+  "hero_title": {"en": "Professional Barista Training Academy in Cumilla", "bn": "কুমিল্লায় প্রফেশনাল বারিস্তা ট্রেনিং একাডেমি"},
+  "hero_sub": {"en": "Join our Professional Barista Course for hands-on training with expert trainers and secure international career opportunities.", "bn": "অভিজ্ঞ ট্রেইনারের মাধ্যমে সরাসরি কফি শপে হাতে-কলমে বারিস্তা ট্রেনিং নিন এবং গড়ে তুলুন আন্তর্জাতিক ক্যারিয়ার।"},
+  "phones": ["01876-981069", "01611-315531"],
+  "whatsapp": "8801876981069",
+  "address": {"en": "Tomchom Bridge, opposite Popular Hospital (west side), Laksam Road, Cumilla", "bn": "কুমিল্লা টমছম ব্রীজ, পপুলার হসপিটালের বিপরীতে (পশ্চিম পার্শ্বে), লাকসাম রোড, কুমিল্লা"},
+  "facebook": "https://www.facebook.com/ahlanqahwabd",
+  "map": "https://www.google.com/maps/search/?api=1&query=Tomchom+Bridge+Laksam+Road+Cumilla",
+  "verify": "https://sadubranding.github.io/verify/",
+  "hours": {"en": "", "bn": ""}
+ },
+ "marquee": [
+  {"en": "Espresso", "bn": "এসপ্রেসো"}, {"en": "Latte Art", "bn": "ল্যাটে আর্ট"},
+  {"en": "Hands-on Training", "bn": "হাতে-কলমে ট্রেনিং"}, {"en": "Certified Course", "bn": "সার্টিফাইড কোর্স"},
+  {"en": "Career Support", "bn": "ক্যারিয়ার সাপোর্ট"}
+ ],
+ "stats": [],
+ "courses": [
+  {"title": {"en": "Professional Barista Course", "bn": "প্রফেশনাল বারিস্তা কোর্স"},
+   "desc": {"en": "Hands-on barista training with expert trainers, from espresso basics to a real coffee shop workflow.", "bn": "অভিজ্ঞ ট্রেইনারের কাছে এসপ্রেসোর মূল বিষয় থেকে কফি শপের বাস্তব কাজ পর্যন্ত হাতে-কলমে শিখুন।"},
+   "duration": {"en": "", "bn": ""}, "fee": {"en": "", "bn": ""}, "batch": {"en": "", "bn": ""}}
+ ],
+ "trainers": [],
+ "career": [
+  {"title": {"en": "International Career Pathway", "bn": "আন্তর্জাতিক ক্যারিয়ারের পথ"},
+   "desc": {"en": "Build skills that are in demand in cafes and hospitality workplaces at home and abroad.", "bn": "দেশে ও বিদেশের ক্যাফে ও হসপিটালিটি খাতে চাহিদাসম্পন্ন দক্ষতা অর্জন করুন।"}},
+  {"title": {"en": "Certificate", "bn": "সার্টিফিকেট"},
+   "desc": {"en": "Receive a course certificate that can be verified online with a QR code.", "bn": "কোর্স শেষে কিউআর কোডসহ সার্টিফিকেট পান, যা অনলাইনে যাচাই করা যায়।"}}
+ ],
+ "gallery": [],
+ "reviews": [],
+ "faq": []
+}
