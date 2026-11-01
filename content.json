@@ -28,7 +28,8 @@
   "hours": {
    "en": "",
    "bn": ""
-  }
+  },
+  "map_embed": "<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2636.9971174518473!2d91.17788177224469!3d23.453959657841768!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37547f002f44c723%3A0xf10046f033276150!2sAhlan%20Qahwa%20Barista%20Training%20Centre%20-%20Bangladesh!5e1!3m2!1sen!2sbd!4v1793559406837!5m2!1sen!2sbd\" width=\"600\" height=\"450\" style=\"border:0;\" allowfullscreen=\"\" loading=\"lazy\" referrerpolicy=\"strict-origin-when-cross-origin\"></iframe>"
  },
  "marquee": [
   {
